@@ -1,0 +1,280 @@
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
+:root {
+  --gradient-light: #a65fec;
+  --gradient-dark: #7e22ce;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+/*                        
+  /$$$$$$$   /$$$$$$  /$$    /$$
+  | $$__  $$ |____  $$|  $$  /$$/
+  | $$  \ $$  /$$$$$$$ \  $$/$$/ 
+  | $$  | $$ /$$__  $$  \  $$$/  
+  | $$  | $$|  $$$$$$$   \  $/   
+  |__/  |__/ \_______/    \_/    
+*/
+
+nav {
+  width: 100%;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+
+  background-color: rgb(20,20,20);
+}
+
+nav.burger-active {
+  height: 100%;
+  background-color: black;
+}
+
+nav h1 {
+  font-family: 'Gilroy-ExtraBold', sans-serif;
+  font-size: 32px;
+  color: white;
+}
+
+nav a {
+  font-family: 'Inter var', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgba(255,255,255,0.5);
+}
+
+header {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-family: 'Gilroy-ExtraBold', sans-serif;
+  font-size: 32px;
+  color: white;
+}
+
+header a {
+  font-family: 'Inter var', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgba(255,255,255,0.5);
+}
+
+.nav-links {
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 0px;
+
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.nav-links a:hover {
+  color: rgba(255,255,255,1.0);
+}
+
+.nav-links.burger-active{
+  max-height: 100%;
+
+  padding: 20px;
+}
+
+.icon {
+  height: 25px;
+  width: 25px;
+  color: white
+}
+
+.shop-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+}
+
+.burger {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.5s;
+
+  cursor: pointer;
+}
+
+.burger.burger-active {
+  transition: all 0.1s;
+  gap: 0px !important;
+}
+
+.bar {
+  width: 16px;
+  height: 1px;
+  background-color: white;
+}
+
+.one {
+  transition: all 0.1s;
+}
+
+.one.burger-active {
+  transition: all 0.5s !important;
+  transform: rotate(45deg) translate(0.5px,0.5px);
+}
+
+.two {
+  transition: all 0.1s;
+}
+
+.two.burger-active{
+  transition: all 0.5s !important;
+  transform: rotate(-45deg);
+}
+
+/*
+                                   /$$     /$$                              
+                                  | $$    |__/                              
+    /$$$$$$$  /$$$$$$   /$$$$$$$ /$$$$$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$$
+   /$$_____/ /$$__  $$ /$$_____/|_  $$_/  | $$ /$$__  $$| $$__  $$ /$$_____/
+  |  $$$$$$ | $$$$$$$$| $$        | $$    | $$| $$  \ $$| $$  \ $$|  $$$$$$ 
+   \____  $$| $$_____/| $$        | $$ /$$| $$| $$  | $$| $$  | $$ \____  $$
+   /$$$$$$$/|  $$$$$$$|  $$$$$$$  |  $$$$/| $$|  $$$$$$/| $$  | $$ /$$$$$$$/
+  |_______/  \_______/ \_______/   \___/  |__/ \______/ |__/  |__/|_______/ 
+*/
+
+#hero {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  background-color: black;
+  /* background-image: linear-gradient(to right, var(--gradient-dark), var(--gradient-light)); */
+}
+
+/*
+   /$$                                 /$$    
+  |__/                                | $$    
+   /$$ /$$$$$$$   /$$$$$$  /$$   /$$ /$$$$$$  
+  | $$| $$__  $$ /$$__  $$| $$  | $$|_  $$_/  
+  | $$| $$  \ $$| $$  \ $$| $$  | $$  | $$    
+  | $$| $$  | $$| $$  | $$| $$  | $$  | $$ /$$
+  | $$| $$  | $$| $$$$$$$/|  $$$$$$/  |  $$$$/
+  |__/|__/  |__/| $$____/  \______/    \___/  
+                | $$                          
+                | $$                          
+                |__/                          
+*/
+
+.btn {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+
+  font-size: 16px;
+  font-family: 'Inter var', sans-serif;
+  font-weight: 500;
+
+  background-color: white;
+  border: 1px solid rgba(0,0,0,0.5);
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: 0.5s ease;
+}
+
+.btn.transparent {
+  background-color: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-10px);
+  -webkit-box-shadow: 0px 25px 50px 0px rgba(0,0,0,0.37), 0px 2px 21px 0px rgba(0,0,0,0.37); 
+  box-shadow: 0px 25px 50p
+}
+
+.btn.transparent:hover {
+  background-color: rgba(255,255,255,0.4);
+}
+
+/*
+    /$$$$$$                      /$$             
+  /$$__  $$                    | $$             
+  | $$  \__//$$$$$$  /$$$$$$$  /$$$$$$   /$$$$$$$
+  | $$$$   /$$__  $$| $$__  $$|_  $$_/  /$$_____/
+  | $$_/  | $$  \ $$| $$  \ $$  | $$   |  $$$$$$ 
+  | $$    | $$  | $$| $$  | $$  | $$ /$$\____  $$
+  | $$    |  $$$$$$/| $$  | $$  |  $$$$//$$$$$$$/
+  |__/     \______/ |__/  |__/   \___/ |_______/ 
+*/
+
+@font-face {
+  font-family: Gilroy-ExtraBold;
+  src: url("../misc/Gilroy-ExtraBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Gilroy-Light;
+  src: url("../misc/Gilroy-Light.otf") format("opentype");
+}
+
+h1, h2, h3, h4 {
+  color: white;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h1 span {
+  background-image: linear-gradient(to right, var(--gradient-dark) var(--gradient-light));
+  background-clip: text;
+  color: transparent;
+}
