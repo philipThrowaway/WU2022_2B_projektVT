@@ -25,7 +25,7 @@ html, body {
   height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 /*                        
@@ -75,11 +75,6 @@ nav a {
   transition: 0.5s;
 }
 
-nav.burger-active a {
-  height: 100%;
-  color: rgba(255,255,255,0.65);
-}
-
 header {
   width: 100%;
 
@@ -123,25 +118,29 @@ nav.burger-active header {
   transition: 0.65s all;
 }
 
-.nav-links a:hover {
-  color: rgba(255,255,255,1.0);
-}
-
 .nav-links.burger-active{
   gap: 20px;
   max-height: 100%;
   transition: 0.65s all;
 }
 
-.nav-links li {
+.nav-links a li {
   padding-bottom: 0;
+  color: rgba(255,255,255,0.0);
   border-bottom: 1px solid rgba(255,255,255,0);
   transition: 0.35s;
+  list-style: none;
 }
 
-.nav-links.burger-active li {
+.nav-links.burger-active a li {
+  color: rgba(255,255,255,0.65);
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav-links.burger-active a li:hover {
+  color: rgba(255,255,255,1);
+  border-bottom: 2px solid rgba(255,255,255,0.4);
 }
 
 .icon {
@@ -244,10 +243,51 @@ nav.burger-active .shop-icon {
   text-align: center;
 }
 
-#hero img {
+#hero img#mobile {
   width: 75vw;
 }
 
+#hero img#pc {
+  width: 60vw;
+  display: none;
+}
+
+#prodicts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card h1 {
+  color: black;
+  font-weight: 700;
+  font-size: 28px;
+  padding-bottom: 10px;
+}
+
+.card h2 {
+  color: rgba(0,0,0,0.75);
+  font-weight: 400;
+  font-size: 19px;
+}
+
+footer {
+  width: 100%;
+
+  background-color: rgb(245, 245, 245);
+  color: rgba(0,0,0,0.5);
+}
 
 /*
    /$$                                 /$$    
@@ -283,9 +323,15 @@ nav.burger-active .shop-icon {
 }
 
 .btn:hover {
-  transform: translateY(-10px);
-  -webkit-box-shadow: 0px 25px 50px 0px rgba(0,0,0,0.37), 0px 2px 21px 0px rgba(0,0,0,0.37); 
-  box-shadow: 0px 25px 50p
+  transform: translateY(-5px);
+}
+
+.btn.simple {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+
+  color: rgb(0, 102, 204);
 }
 
 .btn.semi-transparent {
@@ -299,14 +345,14 @@ nav.burger-active .shop-icon {
 }
 
 .btn.transparent {
-  color: rgba(135, 206, 250, 1.0);
-  background-color: rgba(135, 206, 250, 0.1);
-  border: 1px solid rgba(135, 206, 250, 0.2);
+  color: rgba(0, 102, 204, 1.0);
+  background-color: rgba(0, 102, 204, 0.1);
+  border: 1px solid rgba(0, 102, 204, 0.2);
   border-radius: 10px;
 }
 
 .btn.transparent:hover {
-  background-color: rgba(135, 206, 250, 0.2);
+  background-color: rgba(0, 102, 204, 0.2);
 }
 
 /*
@@ -340,4 +386,14 @@ h1 {
 
 h1 span {
   color: white;
+}
+
+/*
+  NO
+*/
+
+@media only screen and (min-width: 768px) {
+  #hero img#pc {display: block;}
+  #hero img#mobile {display: none;}
+  
 }
